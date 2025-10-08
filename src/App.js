@@ -7,6 +7,10 @@ import { createContext, useEffect, useState } from 'react';
 import UseContextHook from './components/UseContextHook';
 import UseTransitionHook from './components/UseTransitionHook';
 
+import Navbar from './routes/Navbar';
+import RoutesConfig from './routes/RoutesConfig';
+import { AuthContextWrapper } from './routes/AuthContextWrapper';
+
 export const ThemeContext = createContext(null);
 function App() {
   // const [count, setCount] = useState(0);
@@ -17,13 +21,17 @@ function App() {
   // },[])
   return (
     // <ThemeContext.Provider value={count}>
-    <div className="App">
-      {/* <UseMemoHook/> */}
-      {/* <ParentComponent/> */}
-      {/* <UseContextHook /> */}
-      {/* <UseReducerHook/> */}
-      {/* <UseTransitionHook/> */}
-    </div>
+    <AuthContextWrapper>
+      <div className="App">
+        <Navbar />
+        <RoutesConfig />
+        {/* <UseMemoHook/> */}
+        {/* <ParentComponent/> */}
+        {/* <UseContextHook /> */}
+        {/* <UseReducerHook/> */}
+        {/* <UseTransitionHook/> */}
+      </div>
+    </AuthContextWrapper>
     // </ThemeContext.Provider>
   );
 }
