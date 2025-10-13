@@ -10,6 +10,7 @@ import UseTransitionHook from './components/UseTransitionHook';
 import Navbar from './routes/Navbar';
 import RoutesConfig from './routes/RoutesConfig';
 import { AuthContextWrapper } from './routes/AuthContextWrapper';
+import UseLayoutEffectHook from './components/UseLayoutEffectHook';
 
 export const ThemeContext = createContext(null);
 function App() {
@@ -23,13 +24,14 @@ function App() {
     // <ThemeContext.Provider value={count}>
     <AuthContextWrapper>
       <div className="App">
-        <Navbar />
-        <RoutesConfig />
+        {/* <Navbar />
+        <RoutesConfig /> */}
         {/* <UseMemoHook/> */}
         {/* <ParentComponent/> */}
         {/* <UseContextHook /> */}
         {/* <UseReducerHook/> */}
         {/* <UseTransitionHook/> */}
+        <UseLayoutEffectHook/>
       </div>
     </AuthContextWrapper>
     // </ThemeContext.Provider>
